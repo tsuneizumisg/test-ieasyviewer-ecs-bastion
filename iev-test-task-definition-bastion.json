@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:616749751767:task-definition/iev-test-task-definition-bastion:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:616749751767:task-definition/iev-test-task-definition-bastion:2",
     "containerDefinitions": [
         {
             "name": "iev-test-container-bastion",
@@ -36,7 +36,8 @@
         }
     ],
     "family": "iev-test-task-definition-bastion",
-    "executionRoleArn": "arn:aws:iam::616749751767:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::616749751767:role/iseto-fargate-test-task-role",
+    "executionRoleArn": "arn:aws:iam::616749751767:role/iseto-fargate-test-task-excution-role",
     "networkMode": "awsvpc",
     "revision": 1,
     "volumes": [],
@@ -56,6 +57,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -79,12 +83,13 @@
         "FARGATE"
     ],
     "cpu": "1024",
-    "memory": "3072",
+    "memory": "2048",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2025-04-02T09:41:09.238Z",
     "registeredBy": "arn:aws:iam::616749751767:user/stsuneizumi",
+    "enableFaultInjection": false,
     "tags": []
 }
