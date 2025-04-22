@@ -90,6 +90,5 @@
     },
     "registeredAt": "2025-04-02T09:41:09.238Z",
     "registeredBy": "arn:aws:iam::616749751767:user/stsuneizumi",
-    "enableFaultInjection": false,
     "tags": []
 }
