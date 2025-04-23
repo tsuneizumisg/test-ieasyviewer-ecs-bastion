@@ -5,4 +5,4 @@
 # RUN yum install -y procps
 # ENTRYPOINT ["./check_login.sh"]
 FROM alpine/socat
-RUN socat tcp4-listen:5432,reuseaddr,fork TCP:iev-test-db.cluster-ckyrutiauzlk.ap-northeast-1.rds.amazonaws.com:5432
+ENTRYPOINT ["socat tcp4-listen:5432,reuseaddr,fork TCP:iev-test-db.cluster-ckyrutiauzlk.ap-northeast-1.rds.amazonaws.com:5432"]
