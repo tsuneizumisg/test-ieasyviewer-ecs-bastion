@@ -2,7 +2,7 @@
 LOGIN_USER="exist"
 while :
 do
-    sleep 5
+    sleep 900
     LOGIN_USER_NUMBER=$(ps -ef | grep ssm-session-worker | grep -v grep | wc -l)
 
     if [ "$LOGIN_USER_NUMBER" -ne 0 ]; then
