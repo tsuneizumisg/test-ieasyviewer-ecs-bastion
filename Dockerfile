@@ -6,10 +6,10 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:2023
 # ENTRYPOINT ["./check_login.sh"]
 # 
 # FROM alpine
-COPY ./check_login.sh .
-RUN chmod 700 check_login.sh
+# COPY ./check_login.sh .
+# RUN chmod 700 check_login.sh
 # RUN apk upgrade
-ENTRYPOINT ["./check_login.sh"]
+# ENTRYPOINT ["./check_login.sh"]
 # 
 # FROM alpine/socat
 # ENTRYPOINT ["socat", "tcp4-listen:5432,reuseaddr,fork", "TCP:iev-test-db.cluster-ckyrutiauzlk.ap-northeast-1.rds.amazonaws.com:5432"]
