@@ -4,6 +4,7 @@ while :
 do
     sleep 900
     LOGIN_USER_NUMBER=$(ps -ef | grep ssm-session-worker | grep -v grep | wc -l)
+    echo LOGIN_USER_NUMBER:${LOGIN_USER_NUMBER} 
 
     if [ "$LOGIN_USER_NUMBER" -ne 0 ]; then
         LOGIN_USER="exist"
