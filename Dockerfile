@@ -1,5 +1,5 @@
 #FROM public.ecr.aws/amazonlinux/amazonlinux:2023
-FROM alpine
+FROM rockylinux:9
 COPY ./check_login.sh .
 RUN chmod 700 check_login.sh
 RUN yum update -y
