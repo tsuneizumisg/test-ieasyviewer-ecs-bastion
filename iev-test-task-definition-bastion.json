@@ -1,94 +1,58 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:616749751767:task-definition/iev-test-task-definition-bastion:2",
-    "containerDefinitions": [
+  "containerDefinitions": [
+    {
+      "name": "iev-test-container-bastion",
+      "image": "616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/iev-test-repo-bastion::1.0.0",
+      "cpu": 0,
+      "portMappings": [
         {
-            "name": "iev-test-container-bastion",
-            "image": "616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/iev-test-repo-bastion:latest",
-            "cpu": 0,
-            "portMappings": [
-                {
-                    "name": "iev-test-container-bastion-80-tcp",
-                    "containerPort": 80,
-                    "hostPort": 80,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
-                }
-            ],
-            "essential": true,
-            "environment": [],
-            "environmentFiles": [],
-            "mountPoints": [],
-            "volumesFrom": [],
-            "ulimits": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/aws/ecs/iev-test-container-bastion",
-                    "mode": "non-blocking",
-                    "awslogs-create-group": "true",
-                    "max-buffer-size": "25m",
-                    "awslogs-region": "ap-northeast-1",
-                    "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
-            },
-            "systemControls": []
+          "name": "iev-test-container-bastion-80-tcp",
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp",
+          "appProtocol": "http"
         }
-    ],
-    "family": "iev-test-task-definition-bastion",
-    "taskRoleArn": "arn:aws:iam::616749751767:role/iseto-fargate-test-task-role",
-    "executionRoleArn": "arn:aws:iam::616749751767:role/iseto-fargate-test-task-excution-role",
-    "networkMode": "awsvpc",
-    "revision": 1,
-    "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
+      ],
+      "essential": true,
+      "environment": [
         {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          "name": "ENV",
+          "value": "test"
         }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "cpu": "1024",
-    "memory": "2048",
-    "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "LINUX"
-    },
-    "registeredAt": "2025-04-02T09:41:09.238Z",
-    "registeredBy": "arn:aws:iam::616749751767:user/stsuneizumi",
-    "tags": []
+      ],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "ulimits": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/aws/ecs/iev-test-container-bastion",
+          "mode": "non-blocking",
+          "awslogs-create-group": "true",
+          "max-buffer-size": "25m",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "iev-test-task-definition-bastion",
+  "taskRoleArn": "arn:aws:iam::616749751767:role/iev-test-ecs-task-role",
+  "executionRoleArn": "arn:aws:iam::616749751767:role/iev-test-ecs-task-excution-role",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "tags": []
 }
